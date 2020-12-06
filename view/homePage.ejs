@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+   <style>
+      .profile{
+         margin-bottom: 3rem;
+      }
+   </style>
+   <title>AuthentiCV</title>
+</head>
+<body>
+   <header>
+      <div class="w-full bg-cover bg-center" style="height: 100vh; background: url(https://images.pexels.com/photos/290470/pexels-photo-290470.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); background-size: cover;">
+          <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
+              <div class="text-center">
+                  <h1 style="font-size: 10rem; font-weight: 600; font-family:Georgia, 'Times New Roman', Times, serif; color: white;">AuthentiCV</h1>
+                  <h1 class="text-red-300 text-4xl font-black uppercase md:text-7xl profile">Build the perfect <span class="underline text-blue-400">Resume</span></h1>
+                  <% if(user != undefined){ %>
+                    <% if(user.role == 'student'){ %>
+                     <a href=<%= `/s/${user._id}` %> class="mt-4 px-4 py-2 border border-white text-white bg-indigo-400 text-2xl uppercase font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500" style="padding: 1rem 2rem">View Profile</a>
+                    <% }else{ %>
+                        <a href=<%= `/adminControl/${user._id}` %> class="mt-4 px-4 py-2 border border-white text-white bg-indigo-400 text-2xl uppercase font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500" style="padding: 1rem 2rem">View Profile</a>
+                    <% } %>
+                  <% }else{ %>
+                     <a href="/signup" class="mt-4 px-4 py-2 border border-white text-white bg-indigo-400 text-2xl uppercase font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500" style="padding: 1rem 2rem">Sign Up</a>
+                     <a href="/login" class="mt-4 px-4 py-2 border border-white text-white bg-indigo-400 text-2xl uppercase font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500" style="padding: 1rem 2rem">Login</a>
+                  <% } %>
+              </div>
+          </div>
+      </div>
+  </header>
+</body>
+</html>
