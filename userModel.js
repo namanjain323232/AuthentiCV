@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema(
       minLength: [8, "Password Too Small"],
       select: false,
       validate: {
-        validator: function(el) {
+        validator: function (el) {
           return el === this.password;
         },
         message: "Passwords Do Not Match",
@@ -75,14 +75,14 @@ const userSchema = new mongoose.Schema(
     projects: {
       type: [String],
     },
-    authentic: { 
+    authentic: {
       type: Number
     }
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
 
-userSchema.pre("save", async function(next) {
+userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     return next();
   }
@@ -94,9 +94,8 @@ userSchema.pre("save", async function(next) {
   next();
 });
 
-userSchema.pre("save", async function(next) {
-  await authController.gitHubScraper(`${this.github}?tab=repositories`);
-
+userSchema.pre("save", async function (next) {
+  const temp = await authController.gitHubScraper(this.github);
   const result = await authController.linkedInScraper(this.linkedin);
   this.shortDesc = result.title;
   this.longDesc = result.description;
@@ -106,13 +105,12 @@ userSchema.pre("save", async function(next) {
   this.company = result.company;
   this.position = result.position;
 
-  const gitResult = JSON.parse(fs.readFileSync('./GitHub.json', {encoding:'utf8', flag:'r'}));
-  this.projects = gitResult.Projects;
-
+  // const gitResult = JSON.parse(fs.readFileSync('./GitHub.json', {encoding:'utf8', flag:'r'}));
+  this.projects = temp;
   next();
 });
 
-userSchema.methods.verifyPassword = async function(
+userSchema.methods.verifyPassword = async function (
   LoginPassword,
   signUpPassword
 ) {
