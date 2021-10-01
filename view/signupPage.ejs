@@ -1,39 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-   <title>Signup</title>
-</head>
-<body>
-   <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Signup</title>
+  </head>
+  <body>
+    <style>
       .input {
-          transition: border 0.2s ease-in-out;
-          min-width: 280px
+        transition: border 0.2s ease-in-out;
+        min-width: 280px;
       }
-  
-      .input:focus+.label,
-      .input:active+.label,
-      .input.filled+.label {
-          font-size: .75rem;
-          transition: all 0.2s ease-out;
-          top: -0.1rem;
-          color: #667eea;
+
+      .input:focus + .label,
+      .input:active + .label,
+      .input.filled + .label {
+        font-size: 0.75rem;
+        transition: all 0.2s ease-out;
+        top: -0.1rem;
+        color: #667eea;
       }
-  
+
       .label {
-          transition: all 0.2s ease-out;
-          top: 0.4rem;
-           left: 0;
+        transition: all 0.2s ease-out;
+        top: 0.4rem;
+        left: 0;
       }
-      .whole{
-         padding-top: 0.36rem;
-         background-color: #1F2937;
+      .whole {
+        padding-top: 0.36rem;
+        background-color: #1f2937;
       }
-      .loginText{
-         color: #4F46E5;
+      .loginText {
+        color: #4f46e5;
       }
+<<<<<<< HEAD
+    </style>
+    <div
+      class="whole"
+      style="
+        height: 100vh;
+        background: url(https://images.pexels.com/photos/796607/pexels-photo-796607.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+        background-size: cover;
+      "
+    >
+      <center>
+        <div
+          style="opacity: 0.78"
+          class="shadow-xl p-10 bg-white max-w-xl rounded"
+        >
+          <h1 class="text-4xl font-black mb-4 loginText">Sign Up</h1>
+          <form action="" id="signupForm" class="mb-8">
+            <div class="mb-4 relative">
+              <input
+                class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                id="username"
+                type="text"
+                autofocus
+                required
+              />
+              <label
+                for="email"
+                class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text"
+                >Name</label
+              >
+            </div>
+            <div class="mb-4 relative">
+              <input
+                class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                id="email"
+                type="text"
+                autofocus
+                required
+              />
+              <label
+                for="email"
+                class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text"
+                >Email Address</label
+              >
+            </div>
+            <div class="mb-4 relative">
+              <input
+                class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                id="password"
+                type="password"
+                autofocus
+                required
+              />
+              <label
+                for="password"
+                class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text"
+                >Password</label
+              >
+            </div>
+            <div class="mb-4 relative">
+              <input
+                class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                id="cpassword"
+                type="password"
+                autofocus
+                required
+              />
+              <label
+                for="password"
+                class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text"
+                >Confirm Password</label
+              >
+            </div>
+            <div class="mb-4 relative">
+              <input
+                class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                id="linkedin"
+                type="text"
+                autofocus
+                required
+              />
+              <label
+                for="email"
+                class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text"
+                >LinkedIn Profile Link</label
+              >
+            </div>
+            <div class="mb-4 relative">
+              <input
+                class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600"
+                id="github"
+                type="text"
+                autofocus
+                required
+              />
+              <label
+                for="email"
+                class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text"
+                >GitHub Profile Username</label
+              >
+            </div>
+            <input
+              type="submit"
+              class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded"
+              value="Submit"
+            />
+          </form>
+          <span class="text-base font-base mb-4"
+            >Already Have An Account ? </span
+          ><a href="/login" class="text-2xl font-black mb-4 loginText">LOGIN</a>
+        </div>
+      </center>
+||||||| be2d05e
+  </style>
+  <div class="whole" style="height: 100vh; background: url(https://images.pexels.com/photos/796607/pexels-photo-796607.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); background-size: cover;">
+  <center>
+  <div style=" opacity: 0.78;" class="shadow-xl p-10 bg-white max-w-xl rounded">
+      <h1 class="text-4xl font-black mb-4 loginText">Sign Up</h1>
+      <form action="" id="signupForm" class="mb-8">
+      <div class="mb-4 relative">
+          <input class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="username" type="text" autofocus required>
+          <label for="email" class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text">Name</label>
+      </div>
+      <div class="mb-4 relative">
+         <input class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="email" type="text" autofocus required>
+         <label for="email" class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text">Email Address</label>
+     </div>
+      <div class="mb-4 relative">
+          <input class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="password" type="password" autofocus required>
+          <label for="password" class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text">Password</label>
+      </div>
+      <div class="mb-4 relative">
+         <input class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="cpassword" type="password" autofocus required>
+         <label for="password" class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text">Confirm Password</label>
+     </div>
+     <div class="mb-4 relative">
+        <input class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="linkedin" type="text" autofocus required>
+        <label for="email" class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text">LinkedIn Profile Link</label>
+    </div>
+    <div class="mb-4 relative">
+       <input class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="github" type="text" autofocus required>
+       <label for="email" class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text">GitHub Profile Link</label>
+=======
   </style>
   <div class="whole" style="height: 100vh; background: url(https://images.pexels.com/photos/796607/pexels-photo-796607.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); background-size: cover;">
   <center>
@@ -63,43 +209,50 @@
     <div class="mb-4 relative">
        <input class="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="github" type="text" autofocus required>
        <label for="email" class="label absolute mb-0 -mt-2 pt-4 pl-3 leading-tighter text-gray-400 text-base mt-2 cursor-text">GitHub Profile Username</label>
+>>>>>>> bf9257765ffcc1c23367dae9c7161da0bc73b2df
     </div>
-      <input type="submit" class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded" value="Submit">
-   </form>
-   <span class="text-base font-base mb-4">Already Have An Account ?  </span><a href="/login" class="text-2xl font-black mb-4 loginText">LOGIN</a>
-  </div>
-</center>
-</div>
 
-  <script src="/signup.js"></script>
-  
-  <script>
+    <script src="/signup.js"></script>
+
+    <script>
       var toggleInputContainer = function (input) {
-          if (input.value != "") {
-              input.classList.add('filled');
-          } else {
-              input.classList.remove('filled');
-          }
-      }
-  
-      var labels = document.querySelectorAll('.label');
+        if (input.value != "") {
+          input.classList.add("filled");
+        } else {
+          input.classList.remove("filled");
+        }
+      };
+
+      var labels = document.querySelectorAll(".label");
       for (var i = 0; i < labels.length; i++) {
-          labels[i].addEventListener('click', function () {
-              this.previousElementSibling.focus();
-          });
+        labels[i].addEventListener("click", function () {
+          this.previousElementSibling.focus();
+        });
       }
-  
+
       window.addEventListener("load", function () {
-          var inputs = document.getElementsByClassName("input");
-          for (var i = 0; i < inputs.length; i++) {
-              console.log('looped');
-              inputs[i].addEventListener('keyup', function () {
-                  toggleInputContainer(this);
-              });
-              toggleInputContainer(inputs[i]);
-          }
+        var inputs = document.getElementsByClassName("input");
+        for (var i = 0; i < inputs.length; i++) {
+          console.log("looped");
+          inputs[i].addEventListener("keyup", function () {
+            toggleInputContainer(this);
+          });
+          toggleInputContainer(inputs[i]);
+        }
       });
+<<<<<<< HEAD
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  </body>
+</html>
+||||||| be2d05e
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 </body>
 </html>
+=======
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</body>
+</html>
+>>>>>>> bf9257765ffcc1c23367dae9c7161da0bc73b2df
